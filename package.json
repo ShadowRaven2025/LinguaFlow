@@ -1,0 +1,17 @@
+{
+  "name": "linguaflow",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd linguaflow && pnpm dev",
+    "build": "cd linguaflow && pnpm build",
+    "start": "cd linguaflow && pnpm start",
+    "lint": "cd linguaflow && pnpm lint",
+    "test": "cd linguaflow && pnpm test",
+    "test:watch": "cd linguaflow && pnpm test:watch",
+    "install-deps": "cd linguaflow && pnpm install"
+  },
+  "workspaces": [
+    "linguaflow"
+  ]
+}
