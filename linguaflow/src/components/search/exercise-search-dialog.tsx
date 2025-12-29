@@ -12,21 +12,12 @@ import {
 } from '@/components/ui/command'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
-import { 
-  BookOpen, 
-  Brain, 
-  Search, 
-  Filter,
-  Clock,
-  Star,
-  Target,
-  CheckCircle,
-  Circle,
-  RotateCcw
-} from 'lucide-react'
+import { BookOpen, Brain, Search, Target, CheckCircle, Circle, Clock, Star, Filter } from 'lucide-react'
 
-interface Exercise {
+interface ExerciseSearchResult {
   id: string
   title: string
   description: string
@@ -56,7 +47,7 @@ interface ExerciseSearchDialogProps {
 
 export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialogProps) {
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState<Exercise[]>([])
+  const [results, setResults] = useState<ExerciseSearchResult[]>([])
   const [loading, setLoading] = useState(false)
   const [filters, setFilters] = useState({
     language: '',
@@ -65,7 +56,6 @@ export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialo
     difficulty: '',
     topic: ''
   })
-  const [showFilters, setShowFilters] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
@@ -79,17 +69,15 @@ export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialo
       try {
         const params = new URLSearchParams()
         if (query.trim()) params.append('q', query)
-        if (filters.language) params.append('language', filters.language)
-        if (filters.level) params.append('level', filters.level)
-        if (filters.type) params.append('type', filters.type)
-        if (filters.difficulty) params.append('difficulty', filters.difficulty)
-        if (filters.topic) params.append('topic', filters.topic)
+        Object.entries(filters).forEach(([key, value]) => {
+          if (value) params.append(key, value)
+        })
 
-        const response = await fetch(`/api/exercises/search?${params.toString()}`)
+        const response = await fetch(`/api/exercises/search?${params}`)
         const data = await response.json()
         setResults(data)
       } catch (error) {
-        console.error('Exercise search error:', error)
+        console.error('Search error:', error)
         setResults([])
       } finally {
         setLoading(false)
@@ -104,13 +92,6 @@ export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialo
     onOpenChange(false)
     router.push(url)
     setQuery('')
-    setFilters({
-      language: '',
-      level: '',
-      type: '',
-      difficulty: '',
-      topic: ''
-    })
   }
 
   const clearFilters = () => {
@@ -152,168 +133,163 @@ export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialo
     }
   }
 
-  const activeFiltersCount = Object.values(filters).filter(f => f).length
+  const getLanguageFlag = (language: string) => {
+    switch (language) {
+      case 'english':
+        return '🇬🇧'
+      case 'german':
+        return '🇩🇪'
+      default:
+        return '🌐'
+    }
+  }
+
+  const hasActiveFilters = Object.values(filters).some(f => f)
 
   return (
-    <CommandDialog open={open} onOpenChange={onOpenChange}>
-      <div className="flex items-center border-b px-3">
-        <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-        <input
-          className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
-          placeholder="Поиск заданий по названию, теме или тегам..."
+    <CommandDialog open={open} onOpenChange={onOpenChange} className="max-w-4xl">
+      <div className="flex flex-col h-[600px]">
+        <CommandInput
+          placeholder="Поиск упражнений по названию, теме или тегам..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onValueChange={setQuery}
         />
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowFilters(!showFilters)}
-          className="ml-2 shrink-0"
-        >
-          <Filter className="w-4 h-4" />
-          {activeFiltersCount > 0 && (
-            <Badge variant="secondary" className="ml-1 text-xs">
-              {activeFiltersCount}
-            </Badge>
-          )}
-        </Button>
-      </div>
-
-      {showFilters && (
-        <div className="border-b p-4 space-y-3">
-          <div className="flex items-center justify-between">
-            <h4 className="text-sm font-medium">Фильтры</h4>
-            {activeFiltersCount > 0 && (
+        
+        {/* Filters */}
+        <div className="p-4 border-b bg-muted/50">
+          <div className="flex items-center gap-2 mb-3">
+            <Filter className="w-4 h-4" />
+            <span className="text-sm font-medium">Фильтры</span>
+            {hasActiveFilters && (
               <Button variant="ghost" size="sm" onClick={clearFilters}>
-                <RotateCcw className="w-3 h-3 mr-1" />
                 Очистить
               </Button>
             )}
           </div>
           
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="text-xs text-muted-foreground">Язык</label>
-              <select
-                className="w-full mt-1 px-2 py-1 text-sm border rounded"
-                value={filters.language}
-                onChange={(e) => setFilters(prev => ({ ...prev, language: e.target.value }))}
-              >
-                <option value="">Все языки</option>
-                <option value="english">🇬🇧 Английский</option>
-                <option value="german">🇩🇪 Немецкий</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="text-xs text-muted-foreground">Уровень</label>
-              <select
-                className="w-full mt-1 px-2 py-1 text-sm border rounded"
-                value={filters.level}
-                onChange={(e) => setFilters(prev => ({ ...prev, level: e.target.value }))}
-              >
-                <option value="">Все уровни</option>
-                <option value="a1">A1</option>
-                <option value="a2">A2</option>
-                <option value="b1">B1</option>
-                <option value="b2">B2</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="text-xs text-muted-foreground">Тип</label>
-              <select
-                className="w-full mt-1 px-2 py-1 text-sm border rounded"
-                value={filters.type}
-                onChange={(e) => setFilters(prev => ({ ...prev, type: e.target.value }))}
-              >
-                <option value="">Все типы</option>
-                <option value="quiz_single">Выбор одного</option>
-                <option value="quiz_multiple">Множественный выбор</option>
-                <option value="fill_gap">Заполнить пропуски</option>
-                <option value="match">Сопоставление</option>
-                <option value="theory">Теория</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="text-xs text-muted-foreground">Сложность</label>
-              <select
-                className="w-full mt-1 px-2 py-1 text-sm border rounded"
-                value={filters.difficulty}
-                onChange={(e) => setFilters(prev => ({ ...prev, difficulty: e.target.value }))}
-              >
-                <option value="">Любая</option>
-                <option value="easy">Легко</option>
-                <option value="medium">Средне</option>
-                <option value="hard">Сложно</option>
-              </select>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <Select value={filters.language} onValueChange={(value) => setFilters(prev => ({ ...prev, language: value }))}>
+              <SelectTrigger className="h-8">
+                <SelectValue placeholder="Язык" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">Все языки</SelectItem>
+                <SelectItem value="english">🇬🇧 Английский</SelectItem>
+                <SelectItem value="german">🇩🇪 Немецкий</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={filters.level} onValueChange={(value) => setFilters(prev => ({ ...prev, level: value }))}>
+              <SelectTrigger className="h-8">
+                <SelectValue placeholder="Уровень" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">Все уровни</SelectItem>
+                <SelectItem value="a1">A1</SelectItem>
+                <SelectItem value="a2">A2</SelectItem>
+                <SelectItem value="b1">B1</SelectItem>
+                <SelectItem value="b2">B2</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={filters.type} onValueChange={(value) => setFilters(prev => ({ ...prev, type: value }))}>
+              <SelectTrigger className="h-8">
+                <SelectValue placeholder="Тип" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">Все типы</SelectItem>
+                <SelectItem value="quiz_single">Выбор одного</SelectItem>
+                <SelectItem value="quiz_multiple">Множественный выбор</SelectItem>
+                <SelectItem value="fill_gap">Заполнить пропуски</SelectItem>
+                <SelectItem value="match">Сопоставление</SelectItem>
+                <SelectItem value="theory">Теория</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={filters.difficulty} onValueChange={(value) => setFilters(prev => ({ ...prev, difficulty: value }))}>
+              <SelectTrigger className="h-8">
+                <SelectValue placeholder="Сложность" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">Любая</SelectItem>
+                <SelectItem value="easy">Легко</SelectItem>
+                <SelectItem value="medium">Средне</SelectItem>
+                <SelectItem value="hard">Сложно</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={filters.topic} onValueChange={(value) => setFilters(prev => ({ ...prev, topic: value }))}>
+              <SelectTrigger className="h-8">
+                <SelectValue placeholder="Тема" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">Все темы</SelectItem>
+                <SelectItem value="grammar">Грамматика</SelectItem>
+                <SelectItem value="vocabulary">Словарь</SelectItem>
+                <SelectItem value="listening">Аудирование</SelectItem>
+                <SelectItem value="reading">Чтение</SelectItem>
+                <SelectItem value="writing">Письмо</SelectItem>
+                <SelectItem value="speaking">Говорение</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
-      )}
 
-      <CommandList>
-        <CommandEmpty>
-          {loading ? 'Поиск заданий...' : 'Задания не найдены.'}
-        </CommandEmpty>
-        
-        {results.length > 0 && (
-          <CommandGroup heading={`Найдено заданий: ${results.length}`}>
-            {results.map((exercise) => (
-              <CommandItem
-                key={exercise.id}
-                value={exercise.id}
-                onSelect={() => handleSelect(exercise.url)}
-                className="flex items-start gap-3 p-4 cursor-pointer"
-              >
-                <div className="flex items-center gap-2 mt-1">
-                  {getIcon(exercise.type)}
-                  <span className="text-lg">{exercise.metadata.languageFlag}</span>
-                </div>
-                
-                <div className="flex-1 min-w-0 space-y-2">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-medium truncate">{exercise.title}</h4>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {exercise.description}
-                      </p>
+        <CommandList className="flex-1">
+          <CommandEmpty>
+            {loading ? 'Поиск...' : 'Ничего не найдено.'}
+          </CommandEmpty>
+          
+          {results.length > 0 && (
+            <CommandGroup heading={`Найдено упражнений: ${results.length}`}>
+              {results.map((exercise) => (
+                <CommandItem
+                  key={exercise.id}
+                  value={exercise.id}
+                  onSelect={() => handleSelect(exercise.url)}
+                  className="flex items-center gap-3 p-4 cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">
+                      {getIcon(exercise.type)}
                     </div>
-                    <div className="flex items-center gap-1 shrink-0">
-                      <Badge variant="outline" className="text-xs">
-                        +{exercise.xpReward} XP
+                    <span className="text-lg">{getLanguageFlag(exercise.language)}</span>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-medium truncate">{exercise.title}</span>
+                      <Badge variant="outline" className="text-xs uppercase">
+                        {exercise.level}
+                      </Badge>
+                      <Badge variant="secondary" className="text-xs">
+                        {exercise.metadata.typeLabel}
+                      </Badge>
+                      <Badge className={`text-xs ${getDifficultyColor(exercise.difficulty)}`}>
+                        {exercise.metadata.difficultyLabel}
                       </Badge>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Badge variant="secondary" className="text-xs">
-                      {exercise.metadata.typeLabel}
-                    </Badge>
-                    <Badge 
-                      className={`text-xs ${getDifficultyColor(exercise.difficulty)}`}
-                    >
-                      {exercise.metadata.difficultyLabel}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs uppercase">
-                      {exercise.level}
-                    </Badge>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Clock className="w-3 h-3" />
-                      {exercise.metadata.estimatedTime}
+                    <p className="text-sm text-muted-foreground truncate mb-2">
+                      {exercise.description}
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {exercise.metadata.estimatedTime}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Star className="w-3 h-3" />
+                        {exercise.xpReward} XP
+                      </div>
+                      <span>Урок: {exercise.lessonTitle}</span>
                     </div>
                   </div>
-                  
-                  <div className="text-xs text-muted-foreground">
-                    Урок: {exercise.lessonTitle}
-                  </div>
-                </div>
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        )}
-      </CommandList>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          )}
+        </CommandList>
+      </div>
     </CommandDialog>
   )
 }
