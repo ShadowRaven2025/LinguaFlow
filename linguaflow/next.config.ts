@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  // Ensure CSS is properly handled in production
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;
