@@ -72,7 +72,7 @@ export function ProgressChart({ data }: ProgressChartProps) {
             <YAxis className="text-xs" />
             <Tooltip 
               labelFormatter={(value) => formatDate(value as string)}
-              formatter={(value: number | undefined, name: string) => [
+              formatter={(value: number | undefined, name: string | undefined) => [
                 value || 0, 
                 name === 'lessonsCompleted' ? 'Уроков' : 'Слов'
               ]}
