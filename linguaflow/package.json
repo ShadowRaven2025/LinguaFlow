@@ -50,5 +50,19 @@
     "jest": "^29.7.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "cmdk": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-dialog": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@testing-library/react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }
