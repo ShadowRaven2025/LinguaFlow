@@ -147,8 +147,8 @@ export function ExerciseSearchDialog({ open, onOpenChange }: ExerciseSearchDialo
   const hasActiveFilters = Object.values(filters).some(f => f)
 
   return (
-    <CommandDialog open={open} onOpenChange={onOpenChange} className="max-w-4xl">
-      <div className="flex flex-col h-[600px]">
+    <CommandDialog open={open} onOpenChange={onOpenChange}>
+      <div className="flex flex-col h-[600px] max-w-4xl mx-auto">
         <CommandInput
           placeholder="Поиск упражнений по названию, теме или тегам..."
           value={query}
