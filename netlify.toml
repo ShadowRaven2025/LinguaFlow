@@ -1,10 +1,7 @@
 [build]
   base = "linguaflow"
   command = "pnpm install --no-frozen-lockfile && pnpm build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
