@@ -2,12 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export',
+  // Using SSR with Netlify
   images: {
     unoptimized: true,
   },
-  // Ensure CSS is properly handled in production
-  productionBrowserSourceMaps: false,
+  trailingSlash: true,
+  // Ensure CSS is properly handled
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 export default nextConfig;
