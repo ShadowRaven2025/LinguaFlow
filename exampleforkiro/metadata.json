@@ -1,0 +1,9 @@
+
+{
+  "name": "LinguaFlow Learning Platform",
+  "description": "A high-performance, aesthetically pleasing language learning dashboard featuring spaced-repetition flashcards, interactive theory modules, and comprehensive content management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

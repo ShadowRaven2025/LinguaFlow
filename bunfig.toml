@@ -1,0 +1,17 @@
+[install]
+# Automatically install peer dependencies
+auto = true
+
+# Use legacy peer deps resolution
+peer = true
+
+# Disable strict peer dependencies
+strict-peer-dependencies = false
+
+[install.cache]
+# Enable install cache
+disable = false
+
+[run]
+# Enable bun shell for scripts
+shell = "bun"
