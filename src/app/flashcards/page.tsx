@@ -63,7 +63,7 @@ export default function FlashcardsPage() {
         </div>
 
         {/* Header */}
-        <header className="relative z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-b border-white/20">
+        <header className="relative z-40 bg-slate-900 border-b border-slate-700">
           <div className="container mx-auto px-4 py-6">
             <nav className="flex items-center justify-between">
               <Link href="/" className="flex items-center space-x-3">
@@ -252,7 +252,7 @@ export default function FlashcardsPage() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-b border-white/20">
+      <header className="relative z-40 bg-slate-900 border-b border-slate-700">
         <div className="container mx-auto px-4 py-6">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3">

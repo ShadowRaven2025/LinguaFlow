@@ -80,7 +80,7 @@ export default function AtHomePage() {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
       </div>
 
-      <header className="relative z-10 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-b border-white/20">
+      <header className="relative z-40 bg-slate-900 border-b border-slate-700">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <Link href="/lessons/english/a1" className="flex items-center space-x-3">

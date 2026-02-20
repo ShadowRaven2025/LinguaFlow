@@ -155,6 +155,9 @@ export default function GermanB1Page() {
     if (category === 'grammar') {
       return '/lessons/german/b1/grammar'
     }
+    if (category === 'vocabulary') {
+      return '/lessons/german/b1/vocabulary'
+    }
     if (category === 'conversation') {
       return '/lessons/german/b1/conversation'
     }
@@ -173,7 +176,7 @@ export default function GermanB1Page() {
       <div className="gradient-bg"></div>
 
       {/* Header */}
-      <header className="relative z-10 glass border-b border-border/50 sticky top-0">
+      <header className="relative z-40 bg-slate-900 border-b border-slate-700 sticky top-0">
         <div className="container mx-auto px-4 py-3">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">

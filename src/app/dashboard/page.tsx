@@ -16,6 +16,8 @@ export default function DashboardPage() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [showBreakEffect, setShowBreakEffect] = useState(false)
+  const [cracksVisible, setCracksVisible] = useState(false)
+  const [holeVisible, setHoleVisible] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
@@ -29,6 +31,15 @@ export default function DashboardPage() {
     document.addEventListener('keydown', down)
     return () => document.removeEventListener('keydown', down)
   }, [])
+
+  useEffect(() => {
+    if (showBreakEffect) {
+      setCracksVisible(true)
+      setTimeout(() => {
+        setHoleVisible(true)
+      }, 3000)
+    }
+  }, [showBreakEffect])
 
   if (!mounted) return null
 
@@ -64,24 +75,12 @@ export default function DashboardPage() {
     }, 10000)
   }
 
-  const [cracksVisible, setCracksVisible] = useState(false)
-  const [holeVisible, setHoleVisible] = useState(false)
-
-  useEffect(() => {
-    if (showBreakEffect) {
-      setCracksVisible(true)
-      setTimeout(() => {
-        setHoleVisible(true)
-      }, 3000)
-    }
-  }, [showBreakEffect])
-
   return (
     <div className="min-h-screen relative">
       <div className="gradient-bg"></div>
       
       {/* Header */}
-      <header className="relative z-10 glass border-b border-border/50 sticky top-0">
+      <header className="relative z-40 bg-slate-900 border-b border-slate-700 sticky top-0">
         <div className="container mx-auto px-4 py-3">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
@@ -343,9 +342,24 @@ export default function DashboardPage() {
           {/* Red overlay */}
           <div className={`absolute inset-0 bg-red-900/90 ${cracksVisible ? 'animate-pulse' : ''}`} />
           
-          {/* Cracks SVG - More realistic */}
+          {/* Eye - BEHIND the cracks (like watching through broken glass) */}
+          {holeVisible && (
+            <div className="absolute inset-0 flex items-center justify-center z-5">
+              <img 
+                src="/images/eye.jpg" 
+                alt="eye" 
+                className="w-64 h-64 md:w-96 md:h-96 object-contain animate-pulse opacity-90"
+                style={{ 
+                  filter: 'contrast(1.2) brightness(0.6) saturate(1.3)',
+                  mixBlendMode: 'screen'
+                }}
+              />
+            </div>
+          )}
+          
+          {/* Cracks SVG - on TOP of the eye */}
           {cracksVisible && (
-            <svg className="absolute inset-0 w-full h-full cracks-svg" viewBox="0 0 1000 800" preserveAspectRatio="none">
+            <svg className="absolute inset-0 w-full h-full cracks-svg z-10" viewBox="0 0 1000 800" preserveAspectRatio="none">
               <defs>
                 <filter id="glow">
                   <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -354,74 +368,61 @@ export default function DashboardPage() {
                     <feMergeNode in="SourceGraphic"/>
                   </feMerge>
                 </filter>
+                <filter id="glass">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                  <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
+                  <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+                </filter>
               </defs>
               <g filter="url(#glow)" className="cracks-group">
                 {/* Main cracks from center */}
-                <path d="M500 400 L480 350 L420 280 L380 200 L350 100" stroke="white" strokeWidth="4" fill="none" className="crack-line" />
-                <path d="M500 400 L520 350 L580 280 L620 200 L650 100" stroke="white" strokeWidth="4" fill="none" className="crack-line" />
-                <path d="M500 400 L480 450 L420 520 L380 600 L350 700" stroke="white" strokeWidth="4" fill="none" className="crack-line" />
-                <path d="M500 400 L520 450 L580 520 L620 600 L650 700" stroke="white" strokeWidth="4" fill="none" className="crack-line" />
-                <path d="M500 400 L500 300 L500 150" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
-                <path d="M500 400 L500 500 L500 650" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
+                <path d="M500 400 L480 350 L420 280 L380 200 L350 100" stroke="white" strokeWidth="4" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L520 350 L580 280 L620 200 L650 100" stroke="white" strokeWidth="4" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L480 450 L420 520 L380 600 L350 700" stroke="white" strokeWidth="4" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L520 450 L580 520 L620 600 L650 700" stroke="white" strokeWidth="4" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L500 300 L500 150" stroke="white" strokeWidth="3" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L500 500 L500 650" stroke="white" strokeWidth="3" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
                 
                 {/* Secondary cracks */}
-                <path d="M420 280 L350 280 L280 270 L200 280" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M580 280 L650 280 L720 270 L800 280" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M420 520 L350 520 L280 530 L200 520" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M580 520 L650 520 L720 530 L800 520" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
+                <path d="M420 280 L350 280 L280 270 L200 280" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M580 280 L650 280 L720 270 L800 280" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M420 520 L350 520 L280 530 L200 520" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M580 520 L650 520 L720 530 L800 520" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
                 
                 {/* Smaller branches */}
-                <path d="M380 200 L320 180 L250 190" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M380 200 L400 150 L420 80" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M620 200 L680 180 L750 190" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M620 200 L600 150 L580 80" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M380 600 L320 620 L250 610" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M380 600 L400 650 L420 720" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M620 600 L680 620 L750 610" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M620 600 L600 650 L580 720" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
+                <path d="M380 200 L320 180 L250 190" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M380 200 L400 150 L420 80" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M620 200 L680 180 L750 190" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M620 200 L600 150 L580 80" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M380 600 L320 620 L250 610" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M380 600 L400 650 L420 720" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M620 600 L680 620 L750 610" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M620 600 L600 650 L580 720" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
                 
                 {/* Center cracks */}
-                <path d="M500 400 L450 380 L400 390" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M500 400 L550 380 L600 390" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M500 400 L450 420 L400 410" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
-                <path d="M500 400 L550 420 L600 410" stroke="white" strokeWidth="2" fill="none" className="crack-line" />
+                <path d="M500 400 L450 380 L400 390" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L550 380 L600 390" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L450 420 L400 410" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M500 400 L550 420 L600 410" stroke="white" strokeWidth="2" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
                 
                 {/* Random small cracks */}
-                <path d="M200 280 L180 220 L150 180" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" />
-                <path d="M800 280 L820 220 L850 180" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" />
-                <path d="M200 520 L180 580 L150 620" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" />
-                <path d="M800 520 L820 580 L850 620" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" />
+                <path d="M200 280 L180 220 L150 180" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M800 280 L820 220 L850 180" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M200 520 L180 580 L150 620" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
+                <path d="M800 520 L820 580 L850 620" stroke="white" strokeWidth="1.5" fill="none" className="crack-line" style={{ filter: 'url(#glass)' }} />
               </g>
             </svg>
           )}
           
-          {/* Hole with Eye - appears after 3 seconds */}
-          {holeVisible && (
-            <div className="absolute hole-effect">
-              {/* Dark hole background */}
-              <div className="absolute inset-0 bg-black rounded-full hole-bg" />
-              
-              {/* Crack around hole */}
-              <svg className="absolute inset-0 w-full h-full hole-cracks" viewBox="0 0 300 300" preserveAspectRatio="none">
-                <path d="M150 150 L130 100 L100 50" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
-                <path d="M150 150 L170 100 L200 50" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
-                <path d="M150 150 L130 200 L100 250" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
-                <path d="M150 150 L170 200 L200 250" stroke="white" strokeWidth="3" fill="none" className="crack-line" />
-              </svg>
-              
-              {/* Eye in the hole */}
-              <div className="relative z-10">
-                <img 
-                  src="/images/eye.jpg" 
-                  alt="eye" 
-                  className="w-48 h-48 object-contain animate-pulse eye-in-hole"
-                />
-              </div>
-            </div>
+          {/* Glass shard overlay - gives depth to cracks */}
+          {cracksVisible && (
+            <div className="absolute inset-0 z-20 pointer-events-none" style={{
+              background: 'repeating-linear-gradient(115deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)'
+            }} />
           )}
           
           {/* Text */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
             <h1 className="text-red-600 text-6xl md:text-8xl font-bold animate-pulse drop-shadow-lg text-shake">
               You can't escape
             </h1>

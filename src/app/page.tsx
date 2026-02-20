@@ -52,7 +52,7 @@ export default function HomePage() {
       <div className="gradient-bg"></div>
       
       {/* Header */}
-      <header className="relative z-10 glass border-b border-border/50 sticky top-0">
+      <header className="relative z-40 bg-slate-900 border-b border-slate-700 sticky top-0">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
@@ -65,7 +65,7 @@ export default function HomePage() {
               <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                 LinguaFlow
               </span>
-              text-xs text-m<div className="uted-foreground">Изучай с удовольствием</div>
+              <div className="text-xs text-muted-foreground">Изучай с удовольствием</div>
             </div>
           </Link>
           <nav className="flex items-center gap-2">
