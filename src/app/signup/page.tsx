@@ -17,7 +17,6 @@ export default function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
   const router = useRouter()
   const supabase = createClient()
 
@@ -40,9 +39,6 @@ export default function SignUpPage() {
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
     })
 
     setLoading(false)
@@ -50,35 +46,8 @@ export default function SignUpPage() {
     if (error) {
       setError(error.message)
     } else {
-      setSuccess(true)
+      router.push('/dashboard')
     }
-  }
-
-  if (success) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
-        <Card className="w-full max-w-md">
-          <CardContent className="pt-6 text-center">
-            <div className="mb-4 flex justify-center">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
-                <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-            </div>
-            <h2 className="text-xl font-semibold mb-2">Check your email</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              We sent a confirmation link to <strong>{email}</strong>
-            </p>
-            <Link href="/login">
-              <Button variant="outline" className="w-full">
-                Back to Login
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    )
   }
 
   return (
