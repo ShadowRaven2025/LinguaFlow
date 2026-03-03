@@ -82,11 +82,11 @@ export default function HomePage() {
               </kbd>
             </Button>
             <ThemeToggle />
-            <Link href="/lessons">
-              <Button variant="ghost" size="sm" className="hover:bg-secondary/80 transition-colors">Уроки</Button>
+            <Link href="/login">
+              <Button variant="ghost" size="sm" className="hover:bg-secondary/80 transition-colors">Вход</Button>
             </Link>
-            <Link href="/dashboard">
-              <Button size="sm" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 button-glow">Дашборд</Button>
+            <Link href="/signup">
+              <Button size="sm" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 button-glow">Регистрация</Button>
             </Link>
           </nav>
         </div>
