@@ -291,6 +291,89 @@ export default function LessonsPage() {
           </Card>
         </div>
 
+        {/* Course Books */}
+        <div className="text-center mb-8 mt-16">
+          <div className="animate-in-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
+              Популярные учебники
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Уроки по известным методикам
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+          <Link href="/lessons/english-file">
+            <Card className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 card-hover border-border/50 hover:border-primary/30 opacity-0 animate-in-up h-full" style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
+              <CardHeader className="text-center pb-4">
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">📚</div>
+                <CardTitle className="text-lg flex items-center justify-center gap-2 group-hover:text-primary transition-colors">
+                  <BookOpen className="w-5 h-5" />
+                  English File
+                </CardTitle>
+                <CardDescription>
+                  Коммуникативный подход
+                </CardDescription>
+                <div className="flex justify-center items-center gap-3 mt-3">
+                  <Badge className="bg-blue-500/10 text-blue-500 hover:bg-blue-500/20">A1-B2</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="text-sm text-muted-foreground text-center">
+                  Развитие разговорной речи
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/lessons/english-grammar-in-use">
+            <Card className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 card-hover border-border/50 hover:border-primary/30 opacity-0 animate-in-up h-full" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+              <CardHeader className="text-center pb-4">
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">📖</div>
+                <CardTitle className="text-lg flex items-center justify-center gap-2 group-hover:text-primary transition-colors">
+                  <Brain className="w-5 h-5" />
+                  Grammar in Use
+                </CardTitle>
+                <CardDescription>
+                  Грамматика Murphy
+                </CardDescription>
+                <div className="flex justify-center items-center gap-3 mt-3">
+                  <Badge className="bg-purple-500/10 text-purple-500 hover:bg-purple-500/20">B1-B2</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="text-sm text-muted-foreground text-center">
+                  Углублённая грамматика
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/lessons/round-up">
+            <Card className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 card-hover border-border/50 hover:border-primary/30 opacity-0 animate-in-up h-full" style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
+              <CardHeader className="text-center pb-4">
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">✏️</div>
+                <CardTitle className="text-lg flex items-center justify-center gap-2 group-hover:text-primary transition-colors">
+                  <Target className="w-5 h-5" />
+                  Round Up
+                </CardTitle>
+                <CardDescription>
+                  Грамматика для начинающих
+                </CardDescription>
+                <div className="flex justify-center items-center gap-3 mt-3">
+                  <Badge className="bg-green-500/10 text-green-500 hover:bg-green-500/20">A1-A2</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="text-sm text-muted-foreground text-center">
+                  Много практики
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+
         {/* How it works */}
         <div className="text-center mb-12">
           <div className="animate-in-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
