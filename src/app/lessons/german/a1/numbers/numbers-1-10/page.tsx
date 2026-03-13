@@ -217,7 +217,7 @@ export default function GermanNumbers1to10Lesson() {
         correct = correctSet.size === userSet.size && 
                  [...correctSet].every(x => userSet.has(x))
         break
-      case 'fill_gap':
+      case 'fill_gap': {
         const normalizeAnswer = (ans: string) => ans.toLowerCase().trim()
         const numberWords: Record<string, string[]> = {
           'eins': ['1'], 'zwei': ['2'], 'drei': ['3'], 'vier': ['4'], 'fünf': ['5'],
@@ -231,6 +231,7 @@ export default function GermanNumbers1to10Lesson() {
           return userNumber === answerNumber || userNormalized === answerNormalized
         })
         break
+      }
       case 'match':
         const totalPairs = slide.content.pairs.length
         const correctMatches = Object.keys(userAnswer).filter(leftIndex => {
