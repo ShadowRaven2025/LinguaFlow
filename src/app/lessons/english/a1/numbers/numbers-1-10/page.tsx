@@ -15,55 +15,55 @@ const lessonSlides = [
     title: 'Numbers 1-10 - Числа от 1 до 10',
     content: `
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">1</div>
-          <div class="text-xl font-semibold">One</div>
-          <div class="text-sm text-white/60">один</div>
+        <div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-xl text-center border border-blue-100 dark:border-blue-800">
+          <div class="text-5xl font-bold mb-2 text-blue-600 dark:text-blue-400">1</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">One</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">один</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">2</div>
-          <div class="text-xl font-semibold">Two</div>
-          <div class="text-sm text-white/60">два</div>
+        <div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-xl text-center border border-blue-100 dark:border-blue-800">
+          <div class="text-5xl font-bold mb-2 text-blue-600 dark:text-blue-400">2</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Two</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">два</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">3</div>
-          <div class="text-xl font-semibold">Three</div>
-          <div class="text-sm text-white/60">три</div>
+        <div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-xl text-center border border-blue-100 dark:border-blue-800">
+          <div class="text-5xl font-bold mb-2 text-blue-600 dark:text-blue-400">3</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Three</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">три</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">4</div>
-          <div class="text-xl font-semibold">Four</div>
-          <div class="text-sm text-white/60">четыре</div>
+        <div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-xl text-center border border-blue-100 dark:border-blue-800">
+          <div class="text-5xl font-bold mb-2 text-blue-600 dark:text-blue-400">4</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Four</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">четыре</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">5</div>
-          <div class="text-xl font-semibold">Five</div>
-          <div class="text-sm text-white/60">пять</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">5</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Five</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">пять</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">6</div>
-          <div class="text-xl font-semibold">Six</div>
-          <div class="text-sm text-white/60">шесть</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">6</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Six</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">шесть</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">7</div>
-          <div class="text-xl font-semibold">Seven</div>
-          <div class="text-sm text-white/60">семь</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">7</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Seven</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">семь</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">8</div>
-          <div class="text-xl font-semibold">Eight</div>
-          <div class="text-sm text-white/60">восемь</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">8</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Eight</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">восемь</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">9</div>
-          <div class="text-xl font-semibold">Nine</div>
-          <div class="text-sm text-white/60">девять</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">9</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Nine</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">девять</div>
         </div>
-        <div class="glass p-6 rounded-xl text-center">
-          <div class="text-5xl font-bold mb-2">10</div>
-          <div class="text-xl font-semibold">Ten</div>
-          <div class="text-sm text-white/60">десять</div>
+        <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-xl text-center border border-green-100 dark:border-green-800">
+          <div class="text-5xl font-bold mb-2 text-green-600 dark:text-green-400">10</div>
+          <div class="text-xl font-semibold text-gray-800 dark:text-gray-200">Ten</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">десять</div>
         </div>
       </div>
     `
