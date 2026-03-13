@@ -28,20 +28,20 @@ const lessonSlides: Slide[] = [
       <div class="space-y-6">
         <p class="text-lg text-center mb-6">Числа от 11 до 20</p>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">11</div><div class="text-sm text-white/60">elf</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">12</div><div class="text-sm text-white/60">zwölf</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">13</div><div class="text-sm text-white/60">dreizehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">14</div><div class="text-sm text-white/60">vierzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">15</div><div class="text-sm text-white/60">fünfzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">16</div><div class="text-sm text-white/60">sechzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">17</div><div class="text-sm text-white/60">siebzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">18</div><div class="text-sm text-white/60">achtzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">19</div><div class="text-sm text-white/60">neunzehn</div></div>
-          <div class="glass p-4 rounded-xl text-center"><div class="text-3xl font-bold mb-2 text-white">20</div><div class="text-sm text-white/60">zwanzig</div></div>
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-100 dark:border-blue-800"><div class="text-3xl font-bold mb-2 text-blue-600 dark:text-blue-400">11</div><div class="text-sm text-gray-600 dark:text-gray-400">elf</div></div>
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-100 dark:border-blue-800"><div class="text-3xl font-bold mb-2 text-blue-600 dark:text-blue-400">12</div><div class="text-sm text-gray-600 dark:text-gray-400">zwölf</div></div>
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-100 dark:border-blue-800"><div class="text-3xl font-bold mb-2 text-blue-600 dark:text-blue-400">13</div><div class="text-sm text-gray-600 dark:text-gray-400">dreizehn</div></div>
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-100 dark:border-blue-800"><div class="text-3xl font-bold mb-2 text-blue-600 dark:text-blue-400">14</div><div class="text-sm text-gray-600 dark:text-gray-400">vierzehn</div></div>
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl text-center border border-blue-100 dark:border-blue-800"><div class="text-3xl font-bold mb-2 text-blue-600 dark:text-blue-400">15</div><div class="text-sm text-gray-600 dark:text-gray-400">fünfzehn</div></div>
+          <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-100 dark:border-green-800"><div class="text-3xl font-bold mb-2 text-green-600 dark:text-green-400">16</div><div class="text-sm text-gray-600 dark:text-gray-400">sechzehn</div></div>
+          <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-100 dark:border-green-800"><div class="text-3xl font-bold mb-2 text-green-600 dark:text-green-400">17</div><div class="text-sm text-gray-600 dark:text-gray-400">siebzehn</div></div>
+          <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-100 dark:border-green-800"><div class="text-3xl font-bold mb-2 text-green-600 dark:text-green-400">18</div><div class="text-sm text-gray-600 dark:text-gray-400">achtzehn</div></div>
+          <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-100 dark:border-green-800"><div class="text-3xl font-bold mb-2 text-green-600 dark:text-green-400">19</div><div class="text-sm text-gray-600 dark:text-gray-400">neunzehn</div></div>
+          <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-xl text-center border border-green-100 dark:border-green-800"><div class="text-3xl font-bold mb-2 text-green-600 dark:text-green-400">20</div><div class="text-sm text-gray-600 dark:text-gray-400">zwanzig</div></div>
         </div>
-        <div class="glass p-4 rounded-xl mt-6">
-          <h3 class="text-lg font-bold mb-3 text-purple-400">💡 Интересные факты</h3>
-          <ul class="space-y-2 text-slate-300">
+        <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-xl mt-6 border border-purple-100 dark:border-purple-800">
+          <h3 class="text-lg font-bold mb-3 text-purple-600 dark:text-purple-400">💡 Интересные факты</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
             <li>• 12 (zwölf) - особое число, используется в дюжине</li>
             <li>• 16 (sechzehn) и 17 (siebzehn) - особые формы</li>
             <li>• 20 (zwanzig) - основа для счёта до 99</li>
@@ -163,7 +163,7 @@ export default function Numbers11_20Lesson() {
                       onClick={() => !showFeedback && handleAnswer(option)} disabled={showFeedback}>{option}</Button>
                   ))}
                 </div>
-                {showFeedback && slide.explanation && <div className="glass border border-purple-700/50 rounded-xl p-4"><p className="text-purple-200">{slide.explanation}</p></div>}
+                {showFeedback && slide.explanation && <div className="bg-purple-900/30 border border-purple-700/50 rounded-xl p-4"><p className="text-purple-200">{slide.explanation}</p></div>}
               </div>
             )}
             {slide.type === 'completion' && <div className="text-slate-200" dangerouslySetInnerHTML={{ __html: slide.content || '' }} />}
