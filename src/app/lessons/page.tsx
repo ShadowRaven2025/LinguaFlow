@@ -283,6 +283,18 @@ export default function LessonsPage() {
                     </div>
                   </Button>
                 </Link>
+                <Link href="/lessons/german-courses">
+                  <Button variant="outline" className="w-full justify-between group/btn hover:bg-secondary/80 transition-colors">
+                    <span>Учебники</span>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="text-xs">
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        Новые
+                      </Badge>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </div>
+                  </Button>
+                </Link>
               </div>
               <div className="text-sm text-muted-foreground text-center">
                 25+ уроков • 500+ упражнений
