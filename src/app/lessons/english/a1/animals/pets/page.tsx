@@ -221,7 +221,7 @@ export default function PetsLesson() {
         break
       case 'fill_gap':
         correct = slide.content.correctAnswers.some((answer: string) => 
-          answer.toLowerCase() === userAnswer.toLowerCase().trim()
+          answer.toLowerCase().trim() === userAnswer.toLowerCase().trim()
         )
         break
       case 'match':

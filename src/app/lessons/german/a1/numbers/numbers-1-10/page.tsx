@@ -218,9 +218,18 @@ export default function GermanNumbers1to10Lesson() {
                  [...correctSet].every(x => userSet.has(x))
         break
       case 'fill_gap':
-        correct = slide.content.correctAnswers.some((answer: string) => 
-          answer.toLowerCase() === userAnswer.toLowerCase().trim()
-        )
+        const normalizeAnswer = (ans: string) => ans.toLowerCase().trim()
+        const numberWords: Record<string, string[]> = {
+          'eins': ['1'], 'zwei': ['2'], 'drei': ['3'], 'vier': ['4'], 'fünf': ['5'],
+          'sechs': ['6'], 'sieben': ['7'], 'acht': ['8'], 'neun': ['9'], 'zehn': ['10']
+        }
+        const userNormalized = normalizeAnswer(userAnswer)
+        const userNumber = numberWords[userNormalized]?.[0] || userNormalized
+        correct = slide.content.correctAnswers.some((answer: string) => {
+          const answerNormalized = normalizeAnswer(answer)
+          const answerNumber = numberWords[answerNormalized]?.[0] || answerNormalized
+          return userNumber === answerNumber || userNormalized === answerNormalized
+        })
         break
       case 'match':
         const totalPairs = slide.content.pairs.length

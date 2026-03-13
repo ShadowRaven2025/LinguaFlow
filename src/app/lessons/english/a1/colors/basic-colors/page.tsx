@@ -232,8 +232,8 @@ export default function BasicColorsLesson() {
       }, {} as { [key: string]: string })
       return JSON.stringify(answer) === JSON.stringify(correctPairs)
     } else if (slideData.type === 'fill_gap') {
-      return JSON.stringify(answer.map((a: string) => a.toLowerCase())) === 
-             JSON.stringify(slideData.fillAnswers?.map(a => a.toLowerCase()))
+      return JSON.stringify(answer.map((a: string) => a.toLowerCase().trim())) === 
+             JSON.stringify(slideData.fillAnswers?.map(a => a.toLowerCase().trim()))
     }
     return false
   }

@@ -220,8 +220,8 @@ export default function PastSimpleRegularLesson() {
       const correct = (slide.correctAnswer as string[] || []).sort()
       return JSON.stringify(selected) === JSON.stringify(correct)
     } else if (slide.type === 'fill_gap') {
-      return JSON.stringify(fillInputs.map(a => a.toLowerCase())) === 
-             JSON.stringify(slide.fillAnswers?.map(a => a.toLowerCase()))
+      return JSON.stringify(fillInputs.map(a => a.toLowerCase().trim())) === 
+             JSON.stringify(slide.fillAnswers?.map(a => a.toLowerCase().trim()))
     }
     return false
   }
