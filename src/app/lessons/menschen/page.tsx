@@ -70,7 +70,7 @@ export default function MenschenPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
-              <h1 className="text-xl font-bold text-white">LinguaFlow</h1>
+              <h1 className="text-xl font-bold text-white hover:text-green-300 transition-colors">LinguaFlow</h1>
             </Link>
             <div className="flex items-center gap-4">
               <ThemeToggle />
