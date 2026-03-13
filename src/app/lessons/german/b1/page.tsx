@@ -279,6 +279,89 @@ export default function GermanB1Page() {
           </Card>
         </div>
 
+        {/* Course Books */}
+        <div className="mb-12">
+          <div className="animate-in-up opacity-0" style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-foreground">По учебникам</h2>
+                <p className="text-sm text-muted-foreground">Популярные методики</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link href="/lessons/livstin">
+              <Card className="group border-border/50 hover:border-primary/30 transition-all duration-300 card-hover opacity-0 animate-in-up" style={{ animationDelay: '550ms', animationFillMode: 'forwards' }}>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-base">Полный курс</CardTitle>
+                      <CardDescription className="text-sm">Д. Листвин</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-blue-500/10 text-blue-500">A1-B2</Badge>
+                    <span className="text-xs text-muted-foreground">30 уроков</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="/lessons/sicher">
+              <Card className="group border-border/50 hover:border-primary/30 transition-all duration-300 card-hover opacity-0 animate-in-up" style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-base">Sicher!</CardTitle>
+                      <CardDescription className="text-sm">Hueber</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-purple-500/10 text-purple-500">B1-C1</Badge>
+                    <span className="text-xs text-muted-foreground">20 уроков</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="/lessons/german-courses">
+              <Card className="group border-border/50 hover:border-primary/30 transition-all duration-300 card-hover opacity-0 animate-in-up" style={{ animationDelay: '650ms', animationFillMode: 'forwards' }}>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                      <Play className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-base">Все курсы</CardTitle>
+                      <CardDescription className="text-sm">Обзор</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-green-500/10 text-green-500">A1-C1</Badge>
+                    <span className="text-xs text-muted-foreground">3 курса</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+
         {/* Categories */}
         {categories.map((category, catIndex) => (
           <div key={category.id} className="mb-12">
