@@ -501,7 +501,15 @@ export default function GermanNumbers1to10Lesson() {
               <Alert variant="info">
                 <Languages className="h-4 w-4" />
                 <AlertDescription>
-                  Дополните: У меня _____ яблок. (7)
+                  {(() => {
+                    const match = slide.content.question.match(/\((\d+)\)/)
+                    const num = match ? match[1] : ''
+                    const russianPhrases: Record<string, string> = {
+                      '7': 'Дополните: У меня _____ яблок.',
+                      '10': 'Дополните: У моего телефона _____ цифр.'
+                    }
+                    return russianPhrases[num] || 'Дополните пропуск.'
+                  })()}
                 </AlertDescription>
               </Alert>
             )}
