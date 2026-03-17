@@ -294,10 +294,12 @@ export default function EinkaufenLesson() {
                       variant={selectedAnswer === index ? "default" : "outline"}
                       className={`p-4 h-auto text-left justify-start ${
                         showFeedback
-                          ? option === slide.correctAnswer
+                          ? selectedAnswer === slide.correctAnswer && selectedAnswer === index
                             ? "bg-green-600 hover:bg-green-600 border-green-500"
                             : selectedAnswer === index
                             ? "bg-red-600 hover:bg-red-600 border-red-500"
+                            : index === slide.correctAnswer
+                            ? "bg-green-600/50 border-green-500"
                             : "border-slate-600"
                           : selectedAnswer === index
                           ? "bg-blue-600 border-blue-500"
