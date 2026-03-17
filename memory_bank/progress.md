@@ -13,6 +13,8 @@
 ## Changelog
 - Исправлена ошибка 404 на Vercel (trailingSlash убран)
 - Ветка переименована на main
+- Добавлены новые уроки: English A1 Jobs, Clothes, German A1 Clothes
+- AGENTS.md обновлён с правилами Memory Bank
 
 ## Контроль изменений
-last_checked_commit: 00a7d3e
+last_checked_commit: 55d7480
