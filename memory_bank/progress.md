@@ -17,4 +17,4 @@
 - AGENTS.md обновлён с правилами Memory Bank
 
 ## Контроль изменений
-last_checked_commit: 55d7480
+last_checked_commit: 103059c
