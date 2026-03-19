@@ -15,10 +15,63 @@
 - Деплой на Vercel
 
 ## Project Deliverables
-- **AUTH**: Аутентификация и профиль пользователя - 15%
-- **LESSONS**: Система обучения (уроки, курсы, темы) - 20%
-- **FLASHCARDS**: Система карточек с интервальным повторением - 15%
-- **GAMIFICATION**: Геймификация и система достижений - 15%
-- **ANALYTICS**: Аналитика и статистика прогресса - 10%
-- **SEARCH**: Глобальный поиск и навигация - 10%
-- **UI**: Пользовательский интерфейс (темы, адаптивность) - 15%
+| ID | Название | Статус | Вес |
+|----|----------|--------|-----|
+| AUTH | Аутентификация и профиль пользователя | ✅ completed | 15% |
+| LESSONS | Система обучения (уроки, курсы, темы) | ✅ completed | 20% |
+| LESSONS_A2_EN | English A2 уроки (10 уроков) | ✅ completed | 5% |
+| LESSONS_A2_DE | English A2 Vocabulary & Conversation | ✅ completed | 5% |
+| LESSONS_B2_EN | English B2 модули с уроками | ✅ completed | 5% |
+| LESSONS_B2_DE | German B2 модули с уроками | ✅ completed | 5% |
+| FLASHCARDS | Система карточек с интервальным повторением | ✅ completed | 15% |
+| GAMIFICATION | Геймификация и система достижений | ✅ completed | 15% |
+| ANALYTICS | Аналитика и статистика прогресса | ✅ completed | 10% |
+| SEARCH | Глобальный поиск и навигация | ✅ completed | 10% |
+| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 15% |
+
+## Реализованные уроки
+
+### English A1
+- 10 уроков (Alphabet, Greetings, Numbers, Colors, Animals, Food, Family, Time, Phrases, Introductions)
+
+### English A2
+**Grammar (3 урока):**
+- Past Simple - Regular Verbs
+- Past Simple - Irregular Verbs
+- Present Continuous
+
+**Vocabulary (4 урока):**
+- Daily Routine
+- Weather & Seasons
+- Jobs & Professions
+- House & Furniture
+
+**Conversation (3 урока):**
+- At the Restaurant
+- Shopping Phrases
+- Asking for Directions
+
+### English B2
+- Advanced Grammar
+- Business Vocabulary
+- Debates & Arguments
+- Writing Skills
+
+### German A1
+- Базовые уроки немецкого языка
+
+### German B2
+- Konjunktiv I & Passiv
+- Essay Writing
+- Politik und Gesellschaft
+- Medien und Technologie
+- Kultur und Kunst
+- Wissenschaft und Umwelt
+
+## Roadmap (Post-MVP)
+- Система уведомлений
+- Социальные функции (друзья, рейтинги)
+- Голосовые упражнения
+- Офлайн режим (PWA)
+- ИИ-помощник
+- Мобильное приложение
