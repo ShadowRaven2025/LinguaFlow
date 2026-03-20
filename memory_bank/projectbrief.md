@@ -28,9 +28,9 @@
 | LESSONS_DE_B2 | German B2 (Konjunktiv II, Passiv, Aufsatz) | completed | 8% |
 | FLASHCARDS | Система карточек | completed | 5% |
 | GAMIFICATION | Геймификация и достижения | completed | 5% |
-| ANALYTICS | Аналитика прогресса | ✅ completed | 3% |
-| SEARCH | Глобальный поиск | ✅ completed | 1% |
-| UI | Пользовательский интерфейс | ✅ completed | 1% |
+| ANALYTICS | Аналитика прогресса | completed | 3% |
+| SEARCH | Глобальный поиск | completed | 1% |
+| UI | Пользовательский интерфейс | completed | 1% |
 
 ## Реализованные уроки
 
