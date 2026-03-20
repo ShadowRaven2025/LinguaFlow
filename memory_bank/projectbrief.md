@@ -18,17 +18,12 @@
 | ID | Название | Статус | Вес |
 |----|----------|--------|-----|
 | AUTH | Аутентификация и профиль пользователя | ✅ completed | 15% |
-| LESSONS | Система обучения (уроки, курсы, темы) | ✅ completed | 20% |
-| LESSONS_A1 | English A1 уроки | ✅ completed | 5% |
-| LESSONS_A2 | English A2 уроки (Grammar, Travel, Shopping, Vocabulary) | ✅ completed | 5% |
-| LESSONS_B1 | English B1 уроки (Present Perfect, Conditionals, Work) | ✅ completed | 5% |
-| LESSONS_B2 | English B2 уроки (Passive Voice, Reported Speech, Business) | ✅ completed | 5% |
-| LESSONS_DE_A1 | German A1 уроки (Greetings, Family, Clothes) | ✅ completed | 5% |
+| LESSONS | Система уроков (A1-B2 EN/DE) | ✅ completed | 40% |
 | FLASHCARDS | Система карточек с интервальным повторением | ✅ completed | 15% |
 | GAMIFICATION | Геймификация и система достижений | ✅ completed | 15% |
-| ANALYTICS | Аналитика и статистика прогресса | ✅ completed | 10% |
-| SEARCH | Глобальный поиск и навигация | ✅ completed | 10% |
-| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 10% |
+| ANALYTICS | Аналитика и статистика прогресса | ✅ completed | 5% |
+| SEARCH | Глобальный поиск и навигация | ✅ completed | 5% |
+| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 5% |
 
 ## Реализованные уроки
 
