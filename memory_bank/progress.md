@@ -11,10 +11,11 @@
 - Lint ошибки (unused imports, any types) - не блокируют деплой
 
 ## Changelog
+- Обновлён projectbrief.md: синхронизированы уроки с реальной структурой кода
 - Исправлена ошибка 404 на Vercel (trailingSlash убран)
 - Ветка переименована на main
 - Добавлены новые уроки: English A1 Jobs, Clothes, German A1 Clothes
 - AGENTS.md обновлён с правилами Memory Bank
 
 ## Контроль изменений
-last_checked_commit: 86919f8
+last_checked_commit: 21b4bd6
