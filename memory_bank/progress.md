@@ -11,6 +11,8 @@
 - Lint ошибки (unused imports, any types) - не блокируют деплой
 
 ## Changelog
+- Добавлены English B2 уроки: Passive Voice, Reported Speech, Business English, Essay Writing
+- Добавлены German B2 уроки: Konjunktiv II, Passiv, Aufsatzschreiben
 - Добавлены English B1 Grammar уроки: Present Perfect, Perfect vs Past, First Conditional, Second Conditional
 - Добавлен German B1 Grammar урок: Perfekt
 - Обновлён projectbrief.md: синхронизированы уроки с реальной структурой кода
@@ -20,4 +22,4 @@
 - AGENTS.md обновлён с правилами Memory Bank
 
 ## Контроль изменений
-last_checked_commit: ffdbfa4
+last_checked_commit: 22682de
