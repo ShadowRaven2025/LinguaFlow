@@ -21,46 +21,56 @@ const exercises: Array<{
   {
     id: 1,
     type: 'quiz_single',
-    question: 'Choose: She ___ to Paris.',
-    options: ['has gone', 'have gone', 'has went', 'have went'],
-    correct: 0,
-    explanation: 'She requires has + Past Participle.'
+    question: 'When do we use Present Perfect vs Past Simple?',
+    options: [
+      'Present Perfect for completed actions with time markers like yesterday',
+      'Past Simple for experiences connected to the present',
+      'Present Perfect for experiences; Past Simple for completed actions with specific time',
+      'They are interchangeable'
+    ],
+    correct: 2,
+    explanation: 'Present Perfect connects past to present (experiences). Past Simple for completed actions with specific time.'
   },
   {
     id: 2,
     type: 'fill_gap',
-    question: 'I ___ (never/be) to Italy.',
-    answer: 'have never been',
-    acceptableAnswers: ['have never been'],
-    explanation: 'Use Present Perfect with never.'
+    question: 'I ___ (already/see) that movie. It was great!',
+    answer: 'have already seen',
+    acceptableAnswers: ['have already seen', 'have already saw', 've already seen'],
+    explanation: 'Use Present Perfect with already when the experience matters.'
   },
   {
     id: 3,
     type: 'quiz_single',
-    question: 'Which word is NOT with Present Perfect?',
-    options: ['already', 'yesterday', 'ever', 'just'],
+    question: 'Which is correct?',
+    options: [
+      'I have visited Paris in 2020.',
+      'I visited Paris in 2020.',
+      'I have visited Paris last year.',
+      'I visited Paris already.'
+    ],
     correct: 1,
-    explanation: 'Yesterday uses Past Simple.'
+    explanation: 'Specific time (in 2020) requires Past Simple.'
   },
   {
     id: 4,
-    type: 'quiz_single',
-    question: 'They ___ finished.',
-    options: ['has', 'have', 'is', 'are'],
-    correct: 1,
-    explanation: 'They requires have.'
+    type: 'fill_gap',
+    question: 'She ___ (never/be) to Japan. She wants to go.',
+    answer: 'has never been',
+    acceptableAnswers: ['has never been', 'has never bin'],
+    explanation: 'Has + never for negative experience. Her = singular.'
   },
   {
     id: 5,
-    type: 'fill_gap',
-    question: 'Learning English ___ three years. (for/since)',
-    answer: 'for',
-    acceptableAnswers: ['for'],
-    explanation: 'For + period. Since + point in time.'
+    type: 'quiz_single',
+    question: 'Complete: Have you ___ been to Rome?',
+    options: ['yet', 'already', 'still', 'ago'],
+    correct: 0,
+    explanation: 'Yet is used in questions to ask about experiences.'
   }
 ]
 
-export default function PresentPerfectLesson() {
+export default function PerfectVsPastLesson() {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number[]>([])
   const [fillGapAnswer, setFillGapAnswer] = useState('')
@@ -119,8 +129,8 @@ export default function PresentPerfectLesson() {
             <Link href="/lessons/english/b1/grammar">
               <Button variant="ghost" size="sm"><ArrowLeft className="w-4 h-4 mr-2" />B1 Grammar</Button>
             </Link>
-            <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /><span className="font-semibold">Present Perfect</span></div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-4 h-4" /><span>15 min</span></div>
+            <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /><span className="font-semibold">Present Perfect vs Past</span></div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-4 h-4" /><span>18 min</span></div>
           </div>
         </div>
       </header>
@@ -139,7 +149,7 @@ export default function PresentPerfectLesson() {
             <Card>
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-2">Exercise {currentStep + 1} of {exercises.length}</Badge>
-                <h2 className="text-xl font-bold mb-4">Present Perfect</h2>
+                <h2 className="text-xl font-bold mb-4">Present Perfect vs Past Simple</h2>
                 <p className="text-lg mb-6">{currentExercise.question}</p>
 
                 {currentExercise.type === 'quiz_single' && currentExercise.options && (
@@ -198,7 +208,7 @@ export default function PresentPerfectLesson() {
                   <Star className="w-10 h-10 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-2">Lesson Complete!</h2>
-                <p className="text-muted-foreground mb-6">You have finished the Present Perfect lesson.</p>
+                <p className="text-muted-foreground mb-6">You have finished Present Perfect vs Past Simple.</p>
                 <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-6 mb-6">
                   <div className="text-4xl font-bold text-primary mb-2">{finalScore}%</div>
                   <p className="text-muted-foreground">{correctCount} out of {exercises.length} correct</p>

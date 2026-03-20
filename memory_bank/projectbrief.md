@@ -18,14 +18,19 @@
 | ID | Название | Статус | Вес |
 |----|----------|--------|-----|
 | AUTH | Аутентификация и профиль пользователя | ✅ completed | 15% |
-| LESSONS | Система уроков (EN A1-A2, DE A1) | ✅ completed | 30% |
-| LESSONS_B1_B2 | English B1-B2 уроки | 🔄 in_progress | 10% |
-| LESSONS_DE_B1_B2 | German B1-B2 уроки | ⏳ pending | 10% |
-| FLASHCARDS | Система карточек с интервальным повторением | ✅ completed | 15% |
-| GAMIFICATION | Геймификация и система достижений | ✅ completed | 10% |
-| ANALYTICS | Аналитика и статистика прогресса | ✅ completed | 5% |
-| SEARCH | Глобальный поиск и навигация | ✅ completed | 3% |
-| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 2% |
+| LESSONS_CORE | Система уроков (инфраструктура) | ✅ completed | 15% |
+| LESSONS_EN_A1 | English A1 уроки | ✅ completed | 8% |
+| LESSONS_EN_A2 | English A2 уроки | ✅ completed | 8% |
+| LESSONS_EN_B1 | English B1 Grammar (4 урока) | ✅ completed | 7% |
+| LESSONS_EN_B2 | English B2 уроки | 🔄 in_progress | 7% |
+| LESSONS_DE_A1 | German A1 уроки | ✅ completed | 8% |
+| LESSONS_DE_B1 | German B1 Grammar (Perfekt) | ✅ completed | 7% |
+| LESSONS_DE_B2 | German B2 уроки | ⏳ pending | 5% |
+| FLASHCARDS | Система карточек | ✅ completed | 10% |
+| GAMIFICATION | Геймификация и достижения | ✅ completed | 5% |
+| ANALYTICS | Аналитика прогресса | ✅ completed | 3% |
+| SEARCH | Глобальный поиск | ✅ completed | 1% |
+| UI | Пользовательский интерфейс | ✅ completed | 1% |
 
 ## Реализованные уроки
 

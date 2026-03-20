@@ -21,46 +21,61 @@ const exercises: Array<{
   {
     id: 1,
     type: 'quiz_single',
-    question: 'Choose: She ___ to Paris.',
-    options: ['has gone', 'have gone', 'has went', 'have went'],
+    question: 'Choose the correct First Conditional:',
+    options: [
+      'If it rains, I will go outside.',
+      'If it rains, I would go outside.',
+      'If it rained, I will go outside.',
+      'If it rains, I would have gone outside.'
+    ],
     correct: 0,
-    explanation: 'She requires has + Past Participle.'
+    explanation: 'First Conditional: If + Present Simple, Will + infinitive.'
   },
   {
     id: 2,
     type: 'fill_gap',
-    question: 'I ___ (never/be) to Italy.',
-    answer: 'have never been',
-    acceptableAnswers: ['have never been'],
-    explanation: 'Use Present Perfect with never.'
+    question: 'If she ___ (arrive) on time, we ___ (start) the meeting.',
+    answer: 'arrives, will start',
+    acceptableAnswers: ['arrives, will start', 'arrives, would start'],
+    explanation: 'If + Present Simple, Will + base verb.'
   },
   {
     id: 3,
     type: 'quiz_single',
-    question: 'Which word is NOT with Present Perfect?',
-    options: ['already', 'yesterday', 'ever', 'just'],
+    question: 'When do we use First Conditional?',
+    options: [
+      'For imaginary situations',
+      'For real and likely future situations',
+      'For past situations',
+      'For habits'
+    ],
     correct: 1,
-    explanation: 'Yesterday uses Past Simple.'
+    explanation: 'First Conditional describes real, likely situations in the future.'
   },
   {
     id: 4,
-    type: 'quiz_single',
-    question: 'They ___ finished.',
-    options: ['has', 'have', 'is', 'are'],
-    correct: 1,
-    explanation: 'They requires have.'
+    type: 'fill_gap',
+    question: 'I ___ (not/go) to the party if you ___ (not/come).',
+    answer: 'will not go, do not come',
+    acceptableAnswers: ['will not go, do not come', 'wont go, dont come', 'will not go, do not come'],
+    explanation: 'Negative form uses will not (wont).'
   },
   {
     id: 5,
-    type: 'fill_gap',
-    question: 'Learning English ___ three years. (for/since)',
-    answer: 'for',
-    acceptableAnswers: ['for'],
-    explanation: 'For + period. Since + point in time.'
+    type: 'quiz_single',
+    question: 'Which is correct?',
+    options: [
+      'If you will study, you will pass.',
+      'If you study, you will pass.',
+      'If you studied, you will pass.',
+      'If you will study, you would pass.'
+    ],
+    correct: 1,
+    explanation: 'If + Present Simple, Will + infinitive.'
   }
 ]
 
-export default function PresentPerfectLesson() {
+export default function FirstConditionalLesson() {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number[]>([])
   const [fillGapAnswer, setFillGapAnswer] = useState('')
@@ -112,15 +127,15 @@ export default function PresentPerfectLesson() {
   const finalScore = Math.round((correctCount / exercises.length) * 100)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-100 dark:from-slate-900 dark:to-slate-800">
       <header className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <Link href="/lessons/english/b1/grammar">
               <Button variant="ghost" size="sm"><ArrowLeft className="w-4 h-4 mr-2" />B1 Grammar</Button>
             </Link>
-            <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /><span className="font-semibold">Present Perfect</span></div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-4 h-4" /><span>15 min</span></div>
+            <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /><span className="font-semibold">First Conditional</span></div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-4 h-4" /><span>14 min</span></div>
           </div>
         </div>
       </header>
@@ -139,7 +154,7 @@ export default function PresentPerfectLesson() {
             <Card>
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-2">Exercise {currentStep + 1} of {exercises.length}</Badge>
-                <h2 className="text-xl font-bold mb-4">Present Perfect</h2>
+                <h2 className="text-xl font-bold mb-4">First Conditional</h2>
                 <p className="text-lg mb-6">{currentExercise.question}</p>
 
                 {currentExercise.type === 'quiz_single' && currentExercise.options && (
@@ -198,7 +213,7 @@ export default function PresentPerfectLesson() {
                   <Star className="w-10 h-10 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-2">Lesson Complete!</h2>
-                <p className="text-muted-foreground mb-6">You have finished the Present Perfect lesson.</p>
+                <p className="text-muted-foreground mb-6">You have finished First Conditional.</p>
                 <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-6 mb-6">
                   <div className="text-4xl font-bold text-primary mb-2">{finalScore}%</div>
                   <p className="text-muted-foreground">{correctCount} out of {exercises.length} correct</p>
