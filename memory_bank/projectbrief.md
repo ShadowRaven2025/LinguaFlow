@@ -5,7 +5,7 @@
 
 ## Рамки проекта
 - Веб-приложение на Next.js 16+
-- Поддержка английского (A1-C1) и немецкого (A1-B2) языков
+- Поддержка английского (A1-B2) и немецкого (A1-B2) языков
 - Аутентификация через Supabase
 - Деплой на Vercel
 
@@ -19,54 +19,88 @@
 |----|----------|--------|-----|
 | AUTH | Аутентификация и профиль пользователя | ✅ completed | 15% |
 | LESSONS | Система обучения (уроки, курсы, темы) | ✅ completed | 20% |
-| LESSONS_A2_EN | English A2 уроки (10 уроков) | ✅ completed | 5% |
-| LESSONS_A2_DE | English A2 Vocabulary & Conversation | ✅ completed | 5% |
-| LESSONS_B2_EN | English B2 модули с уроками | ✅ completed | 5% |
-| LESSONS_B2_DE | German B2 модули с уроками | ✅ completed | 5% |
+| LESSONS_A1 | English A1 уроки | ✅ completed | 5% |
+| LESSONS_A2 | English A2 уроки (Grammar, Travel, Shopping, Vocabulary) | ✅ completed | 5% |
+| LESSONS_B1 | English B1 уроки (Present Perfect, Conditionals, Work) | ✅ completed | 5% |
+| LESSONS_B2 | English B2 уроки (Passive Voice, Reported Speech, Business) | ✅ completed | 5% |
+| LESSONS_DE_A1 | German A1 уроки (Greetings, Family, Clothes) | ✅ completed | 5% |
 | FLASHCARDS | Система карточек с интервальным повторением | ✅ completed | 15% |
 | GAMIFICATION | Геймификация и система достижений | ✅ completed | 15% |
 | ANALYTICS | Аналитика и статистика прогресса | ✅ completed | 10% |
 | SEARCH | Глобальный поиск и навигация | ✅ completed | 10% |
-| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 15% |
+| UI | Пользовательский интерфейс (темы, адаптивность) | ✅ completed | 10% |
 
 ## Реализованные уроки
 
 ### English A1
-- 10 уроков (Alphabet, Greetings, Numbers, Colors, Animals, Food, Family, Time, Phrases, Introductions)
+**Greetings:**
+- Basic Greetings (4 упражнения)
+- Numbers 1-10, 11-20, Number Recognition
+- Family Members, My Family Tree
+- Basic Colors, Color Matching
+- Common Foods, At the Restaurant
+- Jobs & Professions (Common Jobs, Jobs & Workplace)
+- Clothes (Basic Clothes, Clothes and Colors)
 
 ### English A2
 **Grammar (3 урока):**
-- Past Simple - Regular Verbs
-- Past Simple - Irregular Verbs
-- Present Continuous
+- Regular Past Tense
+- Irregular Past Tense
+- Past Tense Stories
 
-**Vocabulary (4 урока):**
-- Daily Routine
-- Weather & Seasons
-- Jobs & Professions
-- House & Furniture
-
-**Conversation (3 урока):**
-- At the Restaurant
-- Shopping Phrases
+**Travel (3 урока):**
+- At the Airport
+- Hotel Check-in
 - Asking for Directions
 
+**Shopping (2 урока):**
+- At the Store
+- Prices and Money
+
+**Vocabulary:**
+- Jobs & Professions
+- Daily Routine
+- Weather & Seasons
+- House & Furniture
+
+**Conversation:**
+- At the Restaurant
+- Shopping Phrases
+
+### English B1
+**Grammar (5 уроков):**
+- Present Perfect Formation
+- Present Perfect vs Past Simple
+- Experience and Achievement
+- First Conditional
+- Second Conditional
+
+**Work (2 урока):**
+- Job Interview
+- Office Communication
+
 ### English B2
-- Advanced Grammar
-- Business Vocabulary
-- Debates & Arguments
-- Writing Skills
+**Grammar (4 урока):**
+- Passive Voice Formation
+- Passive in Different Tenses
+- Direct vs Reported Speech
+- Reporting Verbs
+
+**Business (2 урока):**
+- Business Presentations
+- Negotiations
 
 ### German A1
-- Базовые уроки немецкого языка
+- Basic Greetings (Deutsche Begrüßungen)
+- Familienmitglieder
+- Basic Clothes
 
-### German B2
-- Konjunktiv I & Passiv
-- Essay Writing
-- Politik und Gesellschaft
-- Medien und Technologie
-- Kultur und Kunst
-- Wissenschaft und Umwelt
+### Livstin German Course (A1-A2)
+**Basics:**
+- Buchstaben, Zahlen, Farben, Wochentage
+
+**Im Alltag:**
+- Begrüßungen, Familie, Einkaufen, Uhrzeit
 
 ## Roadmap (Post-MVP)
 - Система уведомлений
