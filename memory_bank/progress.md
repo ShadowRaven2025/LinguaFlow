@@ -11,6 +11,8 @@
 - Lint ошибки (unused imports, any types) - не блокируют деплой
 
 ## Changelog
+- Добавлены English B1 Grammar уроки: Present Perfect, Perfect vs Past, First Conditional, Second Conditional
+- Добавлен German B1 Grammar урок: Perfekt
 - Обновлён projectbrief.md: синхронизированы уроки с реальной структурой кода
 - Исправлена ошибка 404 на Vercel (trailingSlash убран)
 - Ветка переименована на main
@@ -18,4 +20,4 @@
 - AGENTS.md обновлён с правилами Memory Bank
 
 ## Контроль изменений
-last_checked_commit: ac2f0f9
+last_checked_commit: ffdbfa4
