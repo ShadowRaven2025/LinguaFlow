@@ -17,20 +17,21 @@
 ## Project Deliverables
 | ID | Deliverable | Status | Weight |
 |----|-------------|--------|--------|
-| AUTH | Аутентификация и профиль пользователя | completed | 15 |
-| LESSONS_CORE | Система уроков (инфраструктура) | completed | 15 |
-| LESSONS_EN_A1 | English A1 уроки | completed | 10 |
-| LESSONS_EN_A2 | English A2 уроки | completed | 10 |
-| LESSONS_EN_B1 | English B1 Grammar (4 урока) | completed | 8 |
-| LESSONS_EN_B2 | English B2 (Passive, Reported Speech, Business, Essay) | completed | 8 |
-| LESSONS_DE_A1 | German A1 уроки | completed | 10 |
-| LESSONS_DE_B1 | German B1 (Perfekt) | completed | 6 |
-| LESSONS_DE_B2 | German B2 (Konjunktiv II, Passiv, Aufsatz) | completed | 5 |
-| FLASHCARDS | Система карточек | completed | 5 |
-| GAMIFICATION | Геймификация и достижения | completed | 5 |
+| AUTH | Аутентификация и профиль пользователя | completed | 13 |
+| LESSONS_CORE | Система уроков (инфраструктура) | completed | 13 |
+| LESSONS_EN_A1 | English A1 уроки | completed | 9 |
+| LESSONS_EN_A2 | English A2 уроки | completed | 9 |
+| LESSONS_EN_B1 | English B1 Grammar (4 урока) | completed | 7 |
+| LESSONS_EN_B2 | English B2 (Passive, Reported Speech, Business, Essay) | completed | 7 |
+| LESSONS_DE_A1 | German A1 уроки | completed | 9 |
+| LESSONS_DE_B1 | German B1 (Perfekt) | completed | 5 |
+| LESSONS_DE_B2 | German B2 (Konjunktiv II, Passiv, Aufsatz) | completed | 4 |
+| FLASHCARDS | Система карточек | completed | 4 |
+| GAMIFICATION | Геймификация и достижения | completed | 4 |
 | ANALYTICS | Аналитика прогресса | completed | 1 |
 | SEARCH | Глобальный поиск | completed | 1 |
 | UI | Пользовательский интерфейс | completed | 1 |
+| SECURITY | Укрепление безопасности (middleware, headers, CSP, RLS, rate limiting, валидация) | pending | 13 |
 
 ## Реализованные уроки
 
